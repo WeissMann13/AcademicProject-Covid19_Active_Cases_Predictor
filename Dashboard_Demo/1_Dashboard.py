@@ -79,7 +79,7 @@ st.markdown("""
 st.markdown('<p class="big-font">Daily Cases of Covid-19 in Malaysia Predictor</p>', unsafe_allow_html=True)
 
 covid_data = get_data()
-model = get_model(f'TRANSFORMER-{str(days_to_recovery).zfill(2)}-SEQLENGTH-{input_length}.h5')
+model = get_model(f'Dashboard_Demo/TRANSFORMER-{str(days_to_recovery).zfill(2)}-SEQLENGTH-{input_length}.h5')
 
 if 'prediction' not in st.session_state:
     st.session_state['prediction'] = covid_data.loc[len(covid_data.index) - input_length : len(covid_data.index) - 1].reset_index(drop=True)
