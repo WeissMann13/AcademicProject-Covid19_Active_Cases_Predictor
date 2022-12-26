@@ -1,5 +1,4 @@
 matplotlib==3.5.1
 streamlit==1.10.0
 numpy==1.22.3
-Keras==2.9.0
 plotly==5.9.0
