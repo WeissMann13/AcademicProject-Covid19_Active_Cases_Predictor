@@ -81,9 +81,12 @@ st.markdown('<p class="big-font">Daily Cases of Covid-19 in Malaysia Predictor</
 covid_data = get_data()
 model = get_model(f'Dashboard_Demo/TRANSFORMER-{str(days_to_recovery).zfill(2)}-SEQLENGTH-{input_length}.h5')
 
+loading_text = st.empty()
+
 if 'prediction' not in st.session_state:
     st.session_state['prediction'] = covid_data.loc[len(covid_data.index) - input_length : len(covid_data.index) - 1].reset_index(drop=True)
 
+    loading_text.text("Do not change to a different page while this page is loading. Thank you!")
     loading = st.progress(0)
 
     number_of_days = 365
@@ -98,6 +101,8 @@ if 'prediction' not in st.session_state:
 
     st.session_state['prediction']['cases_new_whole'] = st.session_state['prediction']['cases_new'].astype('int')
     loading.empty()
+    
+loading_text.empty()
     
 with st.form(key='form1'):
     a = st.slider('Month(s) to predict',1,12,1)
