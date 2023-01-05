@@ -7,8 +7,8 @@ import datetime as dt
 import plotly.graph_objects as go
 import timeit
 
-days_to_recovery = 10
-input_length = 19
+days_to_recovery = 9
+input_length = 12
 gamma = 1 / days_to_recovery
 population = 33942526
 
