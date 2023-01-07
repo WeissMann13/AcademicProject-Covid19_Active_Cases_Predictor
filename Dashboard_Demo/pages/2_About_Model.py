@@ -14,7 +14,7 @@ st.subheader("MODEL DETAILS")
 
 st.markdown(
 """
-- Model: Time Series Transformer + SIR Model
+- Model: SIR + Time Series Transformer (SIR-TST) Model
 - Average Days for Recovery: 9 Days
 - Input Sequence Length: 12
 - Daily Cases RMSE: 837.52 Cases
