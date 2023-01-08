@@ -12,6 +12,10 @@ input_length = 12
 gamma = 1 / days_to_recovery
 population = 33942526
 
+if 'sidebar_state' not in st.session_state:
+    st.session_state.sidebar_state = 'collapsed'
+    
+st.set_page_config(initial_sidebar_state=st.session_state.sidebar_state)
 
 @st.cache(allow_output_mutation=True)
 def get_model(model):
